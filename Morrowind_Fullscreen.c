@@ -20,6 +20,7 @@ int main(void)
 {
 	HWND Handle;
 	LONG_PTR Window_Style;
+	unsigned int Error_Code;
 
 	// Find the window handle
 	wprintf(L"Searching for the window handle...\n");
@@ -36,7 +37,7 @@ int main(void)
 	Window_Style = GetWindowLongPtr(Handle, GWL_STYLE);
 	if (Window_Style == 0)
 	{
-		wprintf(L"Error : failed to get the window style.\n");
+		wprintf(L"Error : failed to get the window style (error %u).\n", GetLastError());
 		return EXIT_FAILURE;
 	}
 	// Remove the border and the title bar
@@ -44,7 +45,9 @@ int main(void)
 	// Set the new window style
 	if (SetWindowLongPtr(Handle, GWL_STYLE, Window_Style) == 0)
 	{
-		wprintf(L"Error : failed to set the window style.\n");
+		Error_Code = GetLastError();
+		wprintf(L"Error : failed to set the window style (error %u).\n", Error_Code);
+		if (Error_Code == ERROR_ACCESS_DENIED) wprintf(L"Try to run Cygwin or Morrowind_Fullscreen as administrator.\n");
 		return EXIT_FAILURE;
 	}
 	wprintf(L"The window border was successfully removed.\n");
