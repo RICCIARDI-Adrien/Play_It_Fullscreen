@@ -7,8 +7,8 @@ This little program will remove the Morrowind window border and put the window i
 Use Cygwin to compile the program.  
 This is a console program, so you can run it from the Cygwin console.  
 The program has been tested on Windows 10 Professionnal N 64-bit.
+Run Cygwin or the program in administrator mode if you get the error 5 (Access Denied).
 
 ## Usage
 Start the program before launching Morrowind.  
 When Morrowind is detected, the program will put it in fullscreen and exit.  
-**Warning :** the program detects the Morrowind window by searching for a window titled "Morrowind". Thus, the first window called this way will be put in fullscreen, so be sure that only the Morrowind window is called "Morrowind" when starting the program...

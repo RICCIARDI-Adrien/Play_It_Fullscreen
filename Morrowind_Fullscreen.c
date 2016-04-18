@@ -12,6 +12,8 @@
 //-------------------------------------------------------------------------------------------------
 /** The window to find title. */
 #define WINDOW_TITLE L"Morrowind"
+/** The window to find class. */
+#define WINDOW_CLASS L"Morrowind"
 
 //-------------------------------------------------------------------------------------------------
 // Entry point
@@ -26,7 +28,7 @@ int main(void)
 	wprintf(L"Searching for the window handle...\n");
 	while (1)
 	{
-		Handle = FindWindow(NULL, WINDOW_TITLE);
+		Handle = FindWindow(WINDOW_CLASS, WINDOW_TITLE);
 		if (Handle != NULL) break;
 		Sleep(1000); // Avoid using 100% CPU
 	}
