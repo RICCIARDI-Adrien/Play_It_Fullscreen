@@ -52,7 +52,7 @@ static TGame Games[] =
 	// Tomb Raider IV - The Last Revelation
 	{
 		L"Tomb Raider - The Last Revelation",
-		NULL,
+		L"MainGameWindow",
 		1,
 		0
 	}
@@ -78,6 +78,15 @@ static void WaitForGame(HWND *Pointer_Handle, unsigned int *Pointer_Game_Index)
 			Handle = FindWindow(Games[i].String_Window_Class, Games[i].String_Window_Title);
 			if (Handle != NULL) // A game was found
 			{
+				// Display the game main window class name only in debug mode
+				#ifdef _DEBUG
+				{
+					TCHAR String_Class_Name[1024];
+
+					if (GetClassName(Handle, String_Class_Name, sizeof(String_Class_Name) / sizeof(TCHAR)) == 0) wprintf(L"Failed to retrieve the window class name.\n");
+					else wprintf(L"Window class : %s.\n", String_Class_Name);
+				}
+				#endif
 				*Pointer_Handle = Handle;
 				*Pointer_Game_Index = i;
 				return;

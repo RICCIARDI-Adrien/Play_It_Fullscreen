@@ -4,4 +4,6 @@
 *.suo
 *.vcxproj.filter
 *.vcxproj.user
+Debug
+Play_It_Fullscreen/Debug
 Play_It_Fullscreen/Release
