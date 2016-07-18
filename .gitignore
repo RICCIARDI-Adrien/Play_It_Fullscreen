@@ -1,1 +1,7 @@
-*.exe
+*.opensdf
+*.pdb
+*.sdf
+*.suo
+*.vcxproj.filter
+*.vcxproj.user
+Play_It_Fullscreen/Release

@@ -1,14 +1,17 @@
-# Morrowind_Fullscreen
-Allow to run Morrowind in fullscreen on Windows 10.  
-On Windows 10, running Morrowind in fullscreen mode will show a window border and a part of the window won't be visible as it is out of the screen bounds.  
-This little program will remove the Morrowind window border and put the window in fullscreen mode.
+# Play It Fullscreen
+Allow to run some old video games (~2000) in fullscreen mode on Windows 10.  
+The currently supported video games are :  
+* Morrowind
+* Tomb Raider IV - The Last Revelation
+
+**Send me an email if you want to add a game to the list of supported games.**
 
 ## Compilation
-Use Cygwin to compile the program.  
-This is a console program, so you can run it from the Cygwin console.  
-The program has been tested on Windows 10 Professionnal N 64-bit.
-Run Cygwin or the program in administrator mode if you get the error 5 (Access Denied).
+The program has been compiled using Microsoft Visual Studio 2010 and tested on Windows 10 Professionnal N 64-bit.  
+The Release directory contains the latest version of the program in executable form.  
+The program version is its build date, displayed when the program is started.
 
 ## Usage
-Start the program before launching Morrowind.  
-When Morrowind is detected, the program will put it in fullscreen and exit.  
+Start the program before launching the game.  
+When the game is detected, the program will put it in fullscreen and exit.  
+Run the program in administrator mode if you get the error 5 (Access Denied).
