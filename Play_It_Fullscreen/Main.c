@@ -7,10 +7,22 @@
 #include <windows.h>
 
 //-------------------------------------------------------------------------------------------------
-// Private constants
+// Private constants and macros
 //-------------------------------------------------------------------------------------------------
 /** Tell how many games are handled by the program. */
 #define GAMES_COUNT (sizeof(Games) / sizeof(TGame))
+
+/** Convert the provided ASCII string to a widechar string (concatenate the widechar attribute to the previously expanded macro value).
+ * @param String The ASCII string to convert.
+ * @return The string converted to widechar.
+ * @warning This macro must not be called directly, use CONVERT_ASCII_STRING_TO_WIDECHAR_STRING() instead.
+ */
+#define CONVERT_ASCII_STRING_TO_WIDECHAR_STRING_SECOND_PREPROCESSOR_EXPANSION(String) L##String
+/** Convert the provided ASCII string to a widechar string.
+ * @param String The ASCII string to convert.
+ * @return The string converted to widechar.
+ */
+#define CONVERT_ASCII_STRING_TO_WIDECHAR_STRING(String) CONVERT_ASCII_STRING_TO_WIDECHAR_STRING_SECOND_PREPROCESSOR_EXPANSION(String)
 
 //-------------------------------------------------------------------------------------------------
 // Private types
@@ -89,6 +101,7 @@ int main(void)
 	// Display the banner
 	wprintf(L"+------------------------------------------+\n");
 	wprintf(L"| Play It Fullscreen, (C) Adrien RICCIARDI |\n");
+	wprintf(L"| Build date : " CONVERT_ASCII_STRING_TO_WIDECHAR_STRING(__DATE__) L", " CONVERT_ASCII_STRING_TO_WIDECHAR_STRING(__TIME__) L"       |\n");
 	wprintf(L"+------------------------------------------+\n");
 
 	// Wait for a game to be launched

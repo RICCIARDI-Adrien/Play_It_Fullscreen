@@ -14,4 +14,4 @@ The program version is its build date, displayed when the program is started.
 ## Usage
 Start the program before launching the game.  
 When the game is detected, the program will put it in fullscreen and exit.  
-Run the program in administrator mode if you get the error 5 (Access Denied).
+**Run the program in administrator mode if you get the error 5 (Access Denied).**
